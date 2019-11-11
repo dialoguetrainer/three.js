@@ -122,6 +122,10 @@
 
 					mixer = new THREE.AnimationMixer( model );
 
+					animations.forEach(function(animation)
+					{
+						animation.optimize();
+					});
 					idleAction = mixer.clipAction( animations[ 0 ] );
 					walkAction = mixer.clipAction( animations[ 3 ] );
 					runAction = mixer.clipAction( animations[ 1 ] );
